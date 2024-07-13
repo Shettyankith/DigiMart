@@ -11,7 +11,7 @@ const port = 8080;
 
 // Set up CORS
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
+    origin: "*",
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
