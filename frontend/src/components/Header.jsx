@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState ,useEffect} from "react";
 import Logo from "./Logo";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,7 +25,6 @@ function header() {
       method: summaryAPI.logout.method,
       credentials: "include",
     });
-    console.log("Current user is",user)
     const data = await response.json();
 
     if (data.success) {
@@ -48,6 +47,11 @@ function header() {
       navigate(`/search`);
     }
   };
+
+  useEffect(() => {
+    console.log("User:", user);
+    console.log("Context:", Context);
+  }, [user, Context]);
 
   return (
     <header className="h-16 shadow-md  fixed w-full z-50 bg-white ">
