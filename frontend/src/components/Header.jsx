@@ -25,7 +25,7 @@ function header() {
       method: summaryAPI.logout.method,
       credentials: "include",
     });
-
+    console.log("Current user is",user)
     const data = await response.json();
 
     if (data.success) {
