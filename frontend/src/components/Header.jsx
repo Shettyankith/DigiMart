@@ -51,7 +51,7 @@ function header() {
 
   return (
     <header className="h-16 shadow-md  fixed w-full z-50 bg-white ">
-      <div className="container max-auto h-full flex px-6 items-center justify-between mx-auto  w-full">
+      <div className="container max-auto h-full flex px-2 md:px-6 items-center justify-between mx-auto  w-full">
         <div className="text-xl md:text-3xl font-semibold italic">
           <Link to={"/"}>
             <i className="fa-brands fa-deviantart mr-1"></i>DigiMart

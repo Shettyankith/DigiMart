@@ -1,37 +1,39 @@
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
 
-async function decryptToken(req,res,next){
-    try{
-        const token = req.cookies.token
+async function decryptToken(req, res, next) {
+    try {
+        const token = req.cookies.token;
 
-        if(!token){
+        if (!token) {
             return res.status(200).json({
-                message : "Please Login...!",
-                error : true,
-                success : false
-            })
+                message: 'Please Login...!',
+                error: true,
+                success: false,
+            });
         }
 
         jwt.verify(token, process.env.TOKEN_SECRET_KEY, function(err, decoded) {
-            
-            if(err){
-                console.log("error auth", err)
+            if (err) {
+                console.log('error auth', err);
+                return res.status(401).json({
+                    message: 'Unauthorized',
+                    error: true,
+                    success: false,
+                });
             }
 
             req.userId = decoded?.id;
-            next()
+            next();
         });
 
-
-    }catch(err){
+    } catch (err) {
         res.status(400).json({
-            message : err.message || err,
-            data : [],
-            error : true,
-            success : false
-        })
+            message: err.message || err,
+            data: [],
+            error: true,
+            success: false,
+        });
     }
 }
 
-
-module.exports = decryptToken
+module.exports = decryptToken;

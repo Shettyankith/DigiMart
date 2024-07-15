@@ -24,7 +24,12 @@ function Orders() {
   return (
     <div className="container mx-auto bg-white">
       {order.length == 0 && (
-        <p className="text-center font-medium text-xl mt-8 mb-0 pt-8">No orders</p>
+        <div>
+            <p className="text-center font-medium text-xl mt-8 mb-0 pt-8">No orders</p>
+          <div className="flex justify-center">
+          <Link to={"/"} className="text-center bg-red-500 p-2 text-white font-medium text-lg lg:text-xl mb-3 -mt-8 hover:bg-red-600 transition-all">Shop Now</Link>
+      </div>
+        </div>
       )}
       <div className="p-4 m-2 ">
         {order.map((order, index) => {
@@ -86,9 +91,7 @@ function Orders() {
           );
         })}
       </div>
-      <div className="flex justify-center">
-        <Link to={"/"} className="text-center bg-red-500 p-2 text-white font-medium text-lg lg:text-xl mb-3 -mt-8 hover:bg-red-600 transition-all">Shop Now</Link>
-      </div>
+      
     </div>
   );
 }
