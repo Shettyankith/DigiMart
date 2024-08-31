@@ -25,7 +25,7 @@ async function login(req, res) {
             const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET_KEY, { expiresIn: 60 * 60 * 8 });
 
             const tokenOptions = {
-                httpOnly: true,
+                httpOnly: false,
                 secure: process.env.NODE_ENV === 'production', // ensure secure cookies in production
                 sameSite: 'lax', // or 'lax' depending on your needs
                 path: '/', // cookie path
