@@ -23,10 +23,15 @@ const HorizontalCardProduct = ({ category, heading }) => {
   const fetchData = async () => {
     setLoading(true);
     const categoryProduct = await fetchCategoryProducts(category);
+    if (categoryProduct?.data) {
+      setData(categoryProduct.data);
+    } else {
+      console.log("No data available");
+      setData([]); // Optionally set an empty array to avoid undefined issues
+    }
     setLoading(false);
-
-    setData(categoryProduct?.data);
   };
+  
 
   useEffect(() => {
     fetchData();
