@@ -27,7 +27,7 @@ async function login(req, res) {
             const tokenOptions = {
                 httpOnly: false,
                 secure: process.env.NODE_ENV === 'production', // ensure secure cookies in production
-                sameSite: 'lax', // or 'lax' depending on your needs
+                sameSite: 'none', // or 'lax' depending on your needs
                 path: '/', // cookie path
             };
 
