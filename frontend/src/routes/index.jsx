@@ -14,6 +14,8 @@ import SearchBar from "../pages/SearchBar"
 import PaymentSuccess from "../pages/PaymentSuccess"
 import PaymentCancel from "../pages/PaymentCancel"
 import Orders from "../pages/Orders"
+import AllOrders from "../pages/AllOrders"
+import NotFound from "../pages/NotFound"
 const router=createBrowserRouter([
     {
         path:"/",
@@ -74,10 +76,18 @@ const router=createBrowserRouter([
                     {
                         path:"all-users",
                         element:<AllUsers/>
+                    },
+                    {
+                        path:"all-orders",
+                        element:<AllOrders/>
                     }
                 ]
             },
         ]
+    },
+    {
+        path: "*",
+        element: <NotFound />
     }
 ])
 

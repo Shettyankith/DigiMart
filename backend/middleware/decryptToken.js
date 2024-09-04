@@ -3,11 +3,7 @@ const jwt = require('jsonwebtoken');
 async function decryptToken(req, res, next) {
     try {
         const token = req.cookies.token;
-        if(token){
-            console.log("Token is received correctly")
-        }
         if (!token) {
-            console.log("Token receieved empty",token)
             return res.status(401).json({
                 message: 'Please Login...!',
                 error: true,

@@ -89,6 +89,10 @@ const summaryAPI={
         url:`${backendDomain}/order-list`,
         method:"get",
     },
+    allOrder:{
+        url:`${backendDomain}/all-orders`,
+        method:"get",
+    },
 }
 
 export default summaryAPI;

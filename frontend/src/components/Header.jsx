@@ -48,11 +48,6 @@ function header() {
     }
   };
 
-  useEffect(() => {
-    console.log("User:", user);
-    console.log("Context:", Context);
-  }, [user, Context]);
-
   return (
     <header className="h-16 shadow-md  fixed w-full z-50 bg-white ">
       <div className="container max-auto h-full flex px-2 md:px-6 items-center justify-between mx-auto  w-full">
@@ -122,7 +117,8 @@ function header() {
 
           {user?._id && (
           <div>
-            <Link to={"/orders"}><i className="fa-solid fa-bag-shopping text-2xl lg:text-3xl"></i></Link>
+            <Link to={"/orders"}><i className="fa-solid fa-truck-fast text-2xl lg:text-3xl"></i></Link>
+            
           </div>
            )}
 

@@ -24,6 +24,7 @@ const forgotPassword=require("../controllers/user/forgotPassword")
 const paymentController=require("../controllers/order/paymentController")
 const webhook=require("../controllers/order/webhook");
 const orderList = require("../controllers/order/orderList");
+const allOrder=require("../controllers/order/allOrder");
 
 router.post("/signup",signup);
 
@@ -70,5 +71,7 @@ router.post("/checkout",decryptToken,paymentController);
 router.post("/webhook",webhook);
 
 router.get("/order-list",decryptToken,orderList);
+
+router.get("/all-orders",decryptToken,allOrder);
 
 module.exports=router;
