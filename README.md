@@ -1,4 +1,4 @@
- 🛒 E-commerce Platform
+ 🛒 DigiMart
 
 This is an E-commerce platform built using React.js and React Router, featuring a comprehensive range of functionalities including product browsing, user authentication, admin panel management, and payment processing.
 
