@@ -47,13 +47,18 @@ This is an **E-commerce platform** built using React.js and React Router, featur
 
 ---
 
+## 📸 Screenshots 
+![Homepage Screenshot](/Home_Page.png) 
+![Admin Page Screenshot](/Admin_Page.png)
+
 ## 🔑 Testing Credentials
 Use the following credentials to test the RBAC features:
 
 **Admin Role:** 
 - **Email:** admin@gmail.com
 - **Password:** admin123
-
+- Click on profile pic to go to admin page
+  
 **Customer Role:** 
 - **Email:** customer@example.com
 - **Password:** customer123
